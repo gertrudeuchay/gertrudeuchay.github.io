@@ -13,16 +13,25 @@
         <p>Migration of 23 Enterprise Workloads to AWS</p>
     </header>
 
+
     <main>
 
         <section>
-            <h2>Overview</h2>
+            <h2>Project Overview</h2>
 
             <p>
                 Supported the migration of 23 enterprise workloads from an
-                on-premises environment to AWS, with focus on migration
-                planning, infrastructure, networking, replication,
-                connectivity and post-migration optimization.
+                on-premises environment to AWS. The engagement involved
+                workload assessment, migration planning, AWS infrastructure,
+                networking, replication, connectivity, troubleshooting and
+                post-migration stabilization.
+            </p>
+
+            <p>
+                The target environment was established within an AWS
+                multi-account Landing Zone consisting of four AWS accounts,
+                with centralized networking and connectivity considerations
+                incorporated into the migration architecture.
             </p>
         </section>
 
@@ -31,9 +40,18 @@
             <h2>Business Challenge</h2>
 
             <p>
-                The organization needed to move its existing workloads to AWS
-                while maintaining reliable connectivity, appropriate security
-                controls and operational continuity throughout the migration.
+                The organization needed to transition its existing enterprise
+                workloads from on-premises infrastructure to AWS while
+                maintaining operational continuity, secure connectivity and
+                reliable communication between migration components and AWS
+                services.
+            </p>
+
+            <p>
+                The migration also required the team to work within the
+                constraints of the existing enterprise network and AWS
+                environment while minimizing unnecessary public exposure and
+                controlling infrastructure costs.
             </p>
         </section>
 
@@ -41,83 +59,229 @@
         <section>
             <h2>My Role</h2>
 
+            <p>
+                I contributed to the technical planning, implementation,
+                troubleshooting and stabilization of the migration environment.
+            </p>
+
             <ul>
-                <li>Supported workload assessment and migration planning.</li>
-                <li>Contributed to AWS infrastructure and network design.</li>
-                <li>Supported workload replication and migration activities.</li>
-                <li>Configured and troubleshot AWS connectivity.</li>
-                <li>Investigated migration and infrastructure issues.</li>
-                <li>Supported post-migration stabilization and optimization.</li>
+                <li>
+                    Supported workload assessment and migration planning for
+                    23 enterprise workloads.
+                </li>
+
+                <li>
+                    Contributed to AWS infrastructure and network design within
+                    the existing multi-account Landing Zone.
+                </li>
+
+                <li>
+                    Supported the configuration and operation of AWS
+                    Application Migration Service (MGN) for workload
+                    replication.
+                </li>
+
+                <li>
+                    Configured and troubleshot connectivity between the
+                    migration infrastructure and AWS services.
+                </li>
+
+                <li>
+                    Investigated migration failures and infrastructure issues
+                    and worked through alternative approaches to maintain
+                    migration progress.
+                </li>
+
+                <li>
+                    Supported post-migration stabilization, infrastructure
+                    troubleshooting and resource optimization.
+                </li>
             </ul>
         </section>
 
 
         <section>
-            <h2>Architecture</h2>
+            <h2>Existing Environment</h2>
 
             <p>
-                The migration architecture connected the existing
-                on-premises environment to AWS and used AWS migration,
-                networking and infrastructure services to support workload
-                replication and migration.
+                The workloads originated from an on-premises environment that
+                included Windows Server 2022 infrastructure. The migration
+                environment had to support reliable communication between the
+                on-premises infrastructure, replication components and AWS.
             </p>
 
             <p>
-                The target AWS environment was designed with appropriate
-                network segmentation, private connectivity and security
-                controls to support the migrated workloads.
-            </p>
-
-            <p>
-                An architecture diagram will be added to illustrate the
-                migration flow and key AWS components.
+                The target AWS environment was organized using a four-account
+                Landing Zone and an existing Transit Gateway for centralized
+                network connectivity.
             </p>
         </section>
 
 
         <section>
-            <h2>Key AWS Services</h2>
+            <h2>Architecture Approach</h2>
+
+            <p>
+                AWS Application Migration Service (MGN) was used to support
+                continuous replication of the source workloads into AWS.
+                Replication infrastructure was deployed in AWS and configured
+                to communicate with the required AWS services through the
+                appropriate network paths.
+            </p>
+
+            <p>
+                Because the migration environment did not use a NAT Gateway,
+                private connectivity to required AWS services was established
+                using VPC endpoints.
+            </p>
 
             <ul>
-                <li>AWS Application Migration Service (MGN)</li>
-                <li>Amazon EC2</li>
-                <li>Amazon VPC</li>
-                <li>Amazon S3</li>
-                <li>VPC Endpoints</li>
-                <li>AWS Systems Manager</li>
-                <li>Security Groups</li>
-                <li>AWS IAM</li>
-                <li>Amazon CloudWatch</li>
+                <li>
+                    MGN interface endpoint for private communication with
+                    AWS Application Migration Service.
+                </li>
+
+                <li>
+                    EC2 interface endpoint for private EC2 API communication.
+                </li>
+
+                <li>
+                    S3 Gateway Endpoint for private access to Amazon S3.
+                </li>
+
+                <li>
+                    Security Groups configured to allow required HTTPS
+                    communication over TCP 443.
+                </li>
             </ul>
+
+            <p>
+                This approach allowed the migration infrastructure to
+                communicate with required AWS services without introducing
+                unnecessary public network exposure.
+            </p>
+
+            <p>
+                <strong>Architecture diagram:</strong> A detailed diagram of
+                the migration flow and network architecture will be added here.
+            </p>
         </section>
 
 
         <section>
-            <h2>Key Technical Challenges</h2>
+            <h2>Migration Process</h2>
 
-            <h3>Private Network Connectivity</h3>
+            <ol>
+                <li>
+                    Assessed the source workloads and migration requirements.
+                </li>
+
+                <li>
+                    Reviewed the target AWS environment and existing network
+                    architecture.
+                </li>
+
+                <li>
+                    Prepared the AWS migration infrastructure and required
+                    connectivity.
+                </li>
+
+                <li>
+                    Installed and configured replication components for
+                    workload replication.
+                </li>
+
+                <li>
+                    Monitored replication and investigated connectivity or
+                    infrastructure issues.
+                </li>
+
+                <li>
+                    Performed migration activities and supported workload
+                    stabilization after migration.
+                </li>
+
+                <li>
+                    Reviewed infrastructure sizing and configuration as part
+                    of post-migration optimization.
+                </li>
+            </ol>
+        </section>
+
+
+        <section>
+            <h2>Technical Challenges & Solutions</h2>
+
+
+            <h3>1. Private Connectivity Without NAT Gateway</h3>
 
             <p>
-                The migration environment required reliable connectivity
-                between the replication infrastructure and AWS services
-                without relying on unnecessary public exposure.
+                The VPC did not have a NAT Gateway, so the migration
+                infrastructure could not rely on NAT for communication with
+                AWS services.
             </p>
-
-            <h3>Migration Connectivity</h3>
 
             <p>
-                Investigated connectivity and configuration issues affecting
-                migration components and AWS service communication.
+                I supported the configuration and troubleshooting of VPC
+                endpoints to provide private connectivity to the AWS services
+                required by the migration environment.
             </p>
-
-            <h3>Infrastructure Troubleshooting</h3>
 
             <p>
-                Diagnosed infrastructure, networking and security
-                configuration issues during the migration process and
-                supported resolution through testing and configuration
-                changes.
+                This included an MGN interface endpoint, EC2 interface
+                endpoint and an S3 Gateway Endpoint, with security group rules
+                allowing the required HTTPS traffic.
             </p>
+
+
+            <h3>2. Data Transfer Approach</h3>
+
+            <p>
+                An initial approach involving DataSync and S3 encountered a
+                mounting-related issue that prevented the expected data
+                transfer workflow from operating correctly.
+            </p>
+
+            <p>
+                Rather than allowing the issue to block the migration
+                activities, the approach was reassessed and AWS CLI was used
+                as an alternative method for transferring the required data
+                to Amazon S3.
+            </p>
+
+
+            <h3>3. Replication Infrastructure Sizing</h3>
+
+            <p>
+                During the migration, replication infrastructure sizing was
+                reviewed based on the requirements of the workload replication
+                process.
+            </p>
+
+            <p>
+                The replication server was initially deployed using a smaller
+                instance size and was subsequently increased to provide
+                additional compute capacity as required by the migration
+                workload.
+            </p>
+
+
+            <h3>4. Migration Troubleshooting</h3>
+
+            <p>
+                Migration activities required investigation of networking,
+                endpoint, security group and infrastructure configuration
+                issues affecting communication between the migration
+                components and AWS services.
+            </p>
+
+            <p>
+                Troubleshooting involved isolating the affected component,
+                validating connectivity and configuration, applying targeted
+                changes and verifying the result before proceeding with the
+                migration.
+            </p>
+
         </section>
 
 
@@ -125,11 +289,32 @@
             <h2>Security Considerations</h2>
 
             <ul>
-                <li>Network segmentation using VPC subnets.</li>
-                <li>Controlled traffic using security groups.</li>
-                <li>Private connectivity to required AWS services.</li>
-                <li>IAM-based access control.</li>
-                <li>Minimized unnecessary public exposure.</li>
+                <li>
+                    Private connectivity to required AWS services through
+                    VPC endpoints.
+                </li>
+
+                <li>
+                    Network segmentation using VPC subnets.
+                </li>
+
+                <li>
+                    Security Groups used to control required traffic.
+                </li>
+
+                <li>
+                    HTTPS communication over TCP 443 for applicable AWS
+                    service connectivity.
+                </li>
+
+                <li>
+                    IAM-based access control for AWS resources and services.
+                </li>
+
+                <li>
+                    Minimized unnecessary public exposure of migration
+                    infrastructure.
+                </li>
             </ul>
         </section>
 
@@ -138,11 +323,17 @@
             <h2>Cost Considerations</h2>
 
             <p>
-                Infrastructure sizing and AWS resource selection were
-                considered as part of the migration and post-migration
-                optimization process, with the goal of maintaining the
-                required workload performance while avoiding unnecessary
-                cloud expenditure.
+                Cost was considered throughout the migration and
+                stabilization process. Infrastructure sizing was reviewed
+                against workload requirements to avoid unnecessary resource
+                expenditure while maintaining sufficient capacity for
+                migration activities.
+            </p>
+
+            <p>
+                Post-migration optimization also included reviewing AWS
+                resources and configurations to identify opportunities for
+                improved cost efficiency.
             </p>
         </section>
 
@@ -152,9 +343,35 @@
 
             <p>
                 Supported the successful migration of 23 enterprise workloads
-                to AWS and contributed to the stabilization, troubleshooting
-                and optimization of the resulting cloud environment.
+                to AWS and contributed to the stabilization and optimization
+                of the resulting cloud environment.
             </p>
+
+            <p>
+                The project provided hands-on experience across enterprise
+                migration planning, AWS infrastructure, networking, private
+                service connectivity, workload replication, troubleshooting,
+                security and cloud cost considerations.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>Key Technologies</h2>
+
+            <ul>
+                <li>AWS Application Migration Service (MGN)</li>
+                <li>Amazon EC2</li>
+                <li>Amazon VPC</li>
+                <li>Amazon S3</li>
+                <li>VPC Endpoints</li>
+                <li>Transit Gateway</li>
+                <li>AWS Systems Manager</li>
+                <li>AWS IAM</li>
+                <li>Security Groups</li>
+                <li>Amazon CloudWatch</li>
+                <li>AWS CLI</li>
+            </ul>
         </section>
 
 
@@ -163,11 +380,14 @@
 
             <ul>
                 <li>Enterprise AWS migration</li>
-                <li>Cloud architecture</li>
-                <li>AWS networking</li>
+                <li>Cloud architecture and infrastructure</li>
+                <li>AWS networking and private connectivity</li>
+                <li>Multi-account AWS environments</li>
+                <li>Migration planning and workload replication</li>
                 <li>Infrastructure troubleshooting</li>
-                <li>Security considerations</li>
+                <li>Cloud security considerations</li>
                 <li>Cloud cost optimization</li>
+                <li>Technical problem solving</li>
                 <li>Customer and stakeholder collaboration</li>
             </ul>
         </section>
