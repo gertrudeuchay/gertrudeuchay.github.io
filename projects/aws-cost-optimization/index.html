@@ -6,6 +6,49 @@
     <link rel="stylesheet" href="../../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS Cost Optimization | Gertrude Uchay</title>
+
+    <style>
+        .impact-highlight {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .impact-card {
+            background: #f5f7fa;
+            border-left: 5px solid #232f3e;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .impact-card .number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .impact-card .label {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .project-summary {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            font-weight: 700;
+        }
+
+        @media (max-width: 700px) {
+            .impact-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -28,12 +71,26 @@
     <section>
         <h2>Project Overview</h2>
 
-        <p>
+        <p class="project-summary">
             Led an AWS cost optimization initiative across NNPC's multi-account
             AWS Organization and Descasio-managed client accounts, analyzing
             approximately 250 optimization recommendations across compute,
             storage and database resources.
         </p>
+
+        <div class="impact-highlight">
+
+            <div class="impact-card">
+                <span class="number">$12K+</span>
+                <span class="label">Monthly AWS cost savings</span>
+            </div>
+
+            <div class="impact-card">
+                <span class="number">$144K+</span>
+                <span class="label">Annualized AWS savings</span>
+            </div>
+
+        </div>
 
         <p>
             The initiative delivered <strong>over $12,000 in monthly AWS cost
@@ -291,9 +348,10 @@
         <h2>Cost Optimization Strategy</h2>
 
         <p>
-            The optimization work delivered <strong>over $12,000 in monthly
-            AWS cost savings</strong> by combining multiple optimization
-            levers rather than relying on a single cost reduction measure.
+            The optimization work delivered
+            <strong>over $12,000 in monthly AWS cost savings</strong> by
+            combining multiple optimization levers rather than relying on a
+            single cost reduction measure.
         </p>
 
         <p>
@@ -322,10 +380,25 @@
     <section>
         <h2>Outcome</h2>
 
+        <div class="impact-highlight">
+
+            <div class="impact-card">
+                <span class="number">$12K+</span>
+                <span class="label">Monthly savings achieved</span>
+            </div>
+
+            <div class="impact-card">
+                <span class="number">250+</span>
+                <span class="label">Optimization recommendations analyzed</span>
+            </div>
+
+        </div>
+
         <p>
-            The initiative delivered <strong>over $12,000 in monthly AWS cost
-            savings</strong>, representing more than <strong>$144,000 in
-            annualized savings</strong>.
+            The initiative delivered
+            <strong>over $12,000 in monthly AWS cost savings</strong>,
+            representing more than <strong>$144,000 in annualized
+            savings</strong>.
         </p>
 
         <ul>
