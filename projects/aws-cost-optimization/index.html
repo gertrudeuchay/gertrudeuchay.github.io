@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Cost Optimization | Gertrude Uchay</title>
+</head>
+
+<body>
+
+<header>
+    <h1>AWS Cost Optimization</h1>
+
+    <p>Multi-Account Cost Optimization Across NNPC's AWS Organization</p>
+
+    <p>
+        Cost optimization across compute, storage and database workloads,
+        combining rightsizing, resource modernization and commitment planning
+        to improve AWS cost efficiency.
+    </p>
+</header>
+
+
+<main>
+
+    <section>
+        <h2>Project Overview</h2>
+
+        <p>
+            Led an AWS cost optimization initiative across NNPC's multi-account
+            AWS Organization and Descasio-managed client accounts, analyzing
+            approximately 250 optimization recommendations across compute,
+            storage and database resources.
+        </p>
+
+        <p>
+            The initiative delivered <strong>over $12,000 in monthly AWS cost
+            savings</strong>, equivalent to more than <strong>$144,000 in
+            annualized savings</strong>, through a combination of workload
+            rightsizing, infrastructure modernization and commitment planning.
+        </p>
+
+        <p>
+            The optimization approach was designed to ensure that long-term
+            Reserved Instance and Savings Plan commitments were based on an
+            accurate post-optimization usage baseline rather than inflated
+            historical consumption.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Business Challenge</h2>
+
+        <p>
+            The AWS environment had accumulated cost inefficiencies across
+            several resource types, including oversized EC2 and RDS instances,
+            legacy EBS volume configurations and unoptimized ECS Fargate
+            workloads.
+        </p>
+
+        <p>
+            With approximately 250 recommendations to evaluate, the challenge
+            was not simply identifying potential savings. Recommendations
+            needed to be prioritized, validated against workload requirements
+            and implemented in a controlled sequence without compromising
+            performance or reliability.
+        </p>
+
+        <p>
+            A further challenge was ensuring that long-term commitments were
+            based on an accurate usage baseline. Purchasing Reserved Instances
+            or Savings Plans before rightsizing could result in committing to
+            capacity that was no longer required.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>My Role</h2>
+
+        <p>
+            I led the analysis, prioritization, implementation and tracking of
+            AWS cost optimization activities across the environment.
+        </p>
+
+        <ul>
+            <li>
+                Analyzed approximately 250 optimization recommendations across
+                compute, storage and database resources.
+            </li>
+
+            <li>
+                Used AWS Cost Optimization Hub, AWS Compute Optimizer and AWS
+                Cost Anomaly Detection to identify and validate optimization
+                opportunities.
+            </li>
+
+            <li>
+                Built an Excel-based optimization tracker with effort tiers,
+                savings calculations and a live summary dashboard.
+            </li>
+
+            <li>
+                Rightsized EC2 instances and ECS Fargate workloads based on
+                utilization and workload requirements.
+            </li>
+
+            <li>
+                Implemented EBS gp2-to-gp3 upgrades and corresponding IOPS
+                reductions where appropriate.
+            </li>
+
+            <li>
+                Migrated RDS workloads to Graviton-based instance classes.
+            </li>
+
+            <li>
+                Established a rightsize-first approach before making long-term
+                Reserved Instance and Savings Plan commitments.
+            </li>
+
+            <li>
+                Worked with stakeholders to validate optimization actions and
+                obtain approval for long-term commitments.
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Optimization Strategy</h2>
+
+        <p>
+            The optimization process followed a
+            <strong>rightsize-first, commit-second</strong> strategy.
+            This ensured that long-term AWS commitments were based on actual
+            post-optimization usage rather than legacy consumption patterns.
+        </p>
+
+
+        <h3>1. Discovery</h3>
+
+        <p>
+            Collected cost and utilization recommendations from AWS Cost
+            Optimization Hub, AWS Compute Optimizer and AWS Cost Anomaly
+            Detection across the AWS environment.
+        </p>
+
+
+        <h3>2. Analysis & Prioritization</h3>
+
+        <p>
+            Consolidated approximately 250 recommendations into a structured
+            tracker and categorized them according to implementation effort
+            and projected savings.
+        </p>
+
+        <p>
+            This created a practical way to prioritize high-impact,
+            lower-effort opportunities while also tracking larger
+            infrastructure changes.
+        </p>
+
+
+        <h3>3. Implementation</h3>
+
+        <p>
+            Implemented optimization actions across EC2, ECS Fargate, EBS and
+            RDS workloads, including rightsizing, storage modernization and
+            migration to Graviton-based RDS instance classes.
+        </p>
+
+
+        <h3>4. Baseline Validation</h3>
+
+        <p>
+            After rightsizing, a 14-day lookback period was used to observe
+            the resulting usage pattern before making long-term commitment
+            decisions.
+        </p>
+
+
+        <h3>5. Commitment Planning</h3>
+
+        <p>
+            The corrected post-rightsizing baseline was then used to inform
+            Compute Savings Plan and RDS Reserved Instance decisions.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Key Technical Changes</h2>
+
+
+        <h3>EC2 Rightsizing</h3>
+
+        <p>
+            Reviewed EC2 utilization and sizing recommendations and adjusted
+            instances where workload behavior supported a smaller or more
+            appropriate configuration.
+        </p>
+
+
+        <h3>EBS gp2 to gp3 Migration</h3>
+
+        <p>
+            Upgraded applicable EBS volumes from gp2 to gp3 and reduced IOPS
+            where workload requirements allowed it, modernizing the storage
+            configuration while improving cost efficiency.
+        </p>
+
+
+        <h3>RDS Graviton Migration</h3>
+
+        <p>
+            Migrated all 13 RDS instances in the eu-west-1 environment from
+            previous-generation instance classes to Graviton-based db.r6g
+            classes.
+        </p>
+
+        <p>
+            The migration required coordination across the affected database
+            workloads while maintaining availability and compatibility.
+        </p>
+
+
+        <h3>ECS Fargate Rightsizing</h3>
+
+        <p>
+            Reviewed ECS Fargate task sizing and adjusted compute allocations
+            where utilization patterns indicated that workloads could operate
+            efficiently with lower resource allocations.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Technical Challenges & Solutions</h2>
+
+
+        <h3>Rightsizing Without Impacting Workloads</h3>
+
+        <p>
+            Cost recommendations could not be treated as automatic changes.
+            Compute Optimizer recommendations were reviewed against actual
+            workload behavior and requirements before implementation.
+        </p>
+
+        <p>
+            This helped balance cost reduction with the need to maintain
+            workload performance and reliability.
+        </p>
+
+
+        <h3>Commitment Sequencing</h3>
+
+        <p>
+            Purchasing commitments against the original usage baseline could
+            have resulted in over-commitment because some workloads were
+            oversized.
+        </p>
+
+        <p>
+            The solution was to complete rightsizing first, observe the new
+            usage pattern for 14 days and then use the resulting baseline to
+            inform commitment decisions.
+        </p>
+
+
+        <h3>Optimization at Scale</h3>
+
+        <p>
+            Managing approximately 250 recommendations required more than
+            reviewing AWS console recommendations individually.
+        </p>
+
+        <p>
+            A structured Excel tracker with effort classification, savings
+            calculations and a live dashboard was created to provide a
+            consistent way to prioritize, monitor and report optimization
+            activities.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Cost Optimization Strategy</h2>
+
+        <p>
+            The optimization work delivered <strong>over $12,000 in monthly
+            AWS cost savings</strong> by combining multiple optimization
+            levers rather than relying on a single cost reduction measure.
+        </p>
+
+        <p>
+            Savings opportunities were evaluated based on both financial impact
+            and implementation effort. Quick, lower-risk opportunities such as
+            EBS gp2-to-gp3 upgrades were addressed alongside larger structural
+            changes such as RDS Graviton migration and compute rightsizing.
+        </p>
+
+        <p>
+            The <strong>rightsize-first, commit-second</strong> sequencing was
+            itself an important cost control measure. By correcting resource
+            sizing before purchasing long-term commitments, the resulting
+            Savings Plan and Reserved Instance decisions were based on a more
+            accurate consumption baseline.
+        </p>
+
+        <p>
+            This approach helped turn cost optimization from a one-time
+            exercise into a structured process for continuous cloud cost
+            governance.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Outcome</h2>
+
+        <p>
+            The initiative delivered <strong>over $12,000 in monthly AWS cost
+            savings</strong>, representing more than <strong>$144,000 in
+            annualized savings</strong>.
+        </p>
+
+        <ul>
+            <li>
+                Analyzed and tracked approximately 250 AWS cost optimization
+                recommendations.
+            </li>
+
+            <li>
+                Completed EBS gp2-to-gp3 upgrades and associated IOPS
+                reductions.
+            </li>
+
+            <li>
+                Migrated all 13 eu-west-1 RDS instances to Graviton-based
+                db.r6g instance classes.
+            </li>
+
+            <li>
+                Rightsized EC2 and ECS Fargate workloads.
+            </li>
+
+            <li>
+                Finalized a Compute Savings Plan using a post-rightsizing
+                usage baseline.
+            </li>
+
+            <li>
+                Secured approval for a 3-year No Upfront RDS Reserved Instance
+                commitment.
+            </li>
+
+            <li>
+                Delivered a structured Excel reporting tool for tracking
+                optimization activities and status.
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Key AWS Services</h2>
+
+        <ul>
+            <li>AWS Cost Optimization Hub</li>
+            <li>AWS Compute Optimizer</li>
+            <li>AWS Cost Anomaly Detection</li>
+            <li>AWS Cost Explorer</li>
+            <li>Amazon EC2</li>
+            <li>Amazon RDS</li>
+            <li>Amazon EBS</li>
+            <li>Amazon ECS Fargate</li>
+            <li>AWS Compute Savings Plans</li>
+            <li>Reserved Instances</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>What This Project Demonstrates</h2>
+
+        <ul>
+            <li>AWS cost optimization strategy</li>
+            <li>Compute and storage rightsizing</li>
+            <li>EC2, RDS, EBS and ECS Fargate optimization</li>
+            <li>AWS Graviton migration</li>
+            <li>Reserved Instance and Savings Plan strategy</li>
+            <li>Data-driven prioritization</li>
+            <li>Optimization tracking and reporting</li>
+            <li>Technical decision-making</li>
+            <li>Stakeholder engagement and approval</li>
+            <li>Cloud cost governance</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Back to Portfolio</h2>
+
+        <p>
+            <a href="../../index.html">← Back to Portfolio</a>
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>
