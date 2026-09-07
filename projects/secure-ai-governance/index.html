@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure AI & Agentic Workflow Governance | Gertrude Uchay</title>
+
+    <style>
+        .impact-highlight {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .impact-card {
+            background: #f5f7fa;
+            border-left: 5px solid #232f3e;
+            padding: 22px;
+            border-radius: 8px;
+        }
+
+        .impact-card .number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .impact-card .label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .architecture-flow {
+            background: #f5f7fa;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .architecture-flow strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .impact-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Secure AI & Agentic Workflow Governance on AWS</h1>
+
+    <p>
+        AI Governance Architecture for Secure, Auditable and Controlled AI Workloads
+    </p>
+
+    <p>
+        Designed an AWS-based governance architecture for AI and agentic
+        workflows, focusing on security, data protection, access control,
+        monitoring, auditability and operational oversight.
+    </p>
+</header>
+
+
+<main>
+
+    <section>
+        <h2>Project Overview</h2>
+
+        <p>
+            Designed a secure AI and agentic workflow governance framework on AWS
+            for an organization exploring AI-enabled business workflows.
+        </p>
+
+        <p>
+            The architecture addressed a key challenge associated with
+            enterprise AI adoption: enabling AI workloads to deliver business
+            value while maintaining appropriate controls around identity,
+            data access, model interaction, monitoring and auditability.
+        </p>
+
+        <div class="impact-highlight">
+
+            <div class="impact-card">
+                <span class="number">Multi-Account</span>
+                <span class="label">Separated environments and centralized governance</span>
+            </div>
+
+            <div class="impact-card">
+                <span class="number">AI Governance</span>
+                <span class="label">Controlled AI and agentic workflow execution</span>
+            </div>
+
+            <div class="impact-card">
+                <span class="number">Auditable</span>
+                <span class="label">Centralized monitoring, logging and security controls</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Business Challenge</h2>
+
+        <p>
+            As organizations introduce generative AI and agentic workflows,
+            traditional application security controls alone are not sufficient.
+            AI workloads can interact with sensitive data, invoke downstream
+            services and make decisions or trigger actions on behalf of users.
+        </p>
+
+        <p>
+            The organization therefore needed an architecture that could
+            support AI adoption while maintaining strong controls around
+            identity, permissions, data protection, model access, monitoring
+            and governance.
+        </p>
+
+        <p>
+            The goal was not simply to deploy an AI model. The objective was to
+            establish a controlled operating environment in which AI workloads
+            could be introduced without creating unmanaged security or
+            compliance risks.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>My Role</h2>
+
+        <p>
+            I designed the AWS architecture and governance approach, translating
+            AI security and operational requirements into practical AWS
+            controls.
+        </p>
+
+        <ul>
+            <li>
+                Designed the overall AWS architecture for secure AI and agentic
+                workflows.
+            </li>
+
+            <li>
+                Defined a multi-account structure separating development,
+                production, shared services and centralized logging.
+            </li>
+
+            <li>
+                Designed IAM roles and least-privilege access controls for
+                applications, users and AI-related workloads.
+            </li>
+
+            <li>
+                Incorporated Amazon Bedrock as the managed foundation-model
+                access layer.
+            </li>
+
+            <li>
+                Designed controlled workflow execution using AWS Step Functions
+                and Amazon EventBridge.
+            </li>
+
+            <li>
+                Incorporated CloudTrail and CloudWatch for operational
+                monitoring and audit visibility.
+            </li>
+
+            <li>
+                Designed data protection controls using Amazon S3 and AWS KMS.
+            </li>
+
+            <li>
+                Incorporated Amazon GuardDuty and AWS Security Hub for security
+                detection and centralized security visibility.
+            </li>
+
+            <li>
+                Considered governance requirements around AI access,
+                workflow execution, logging and accountability.
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Architecture Approach</h2>
+
+        <p>
+            The architecture was designed around the principle that AI
+            capabilities should operate within the organization's existing
+            security and governance boundaries rather than becoming an
+            isolated technology layer.
+        </p>
+
+        <div class="architecture-flow">
+
+            <strong>High-Level Flow</strong>
+
+            User / Business Application
+            →
+            IAM-Controlled Access
+            →
+            AI / Agentic Workflow
+            →
+            Amazon Bedrock
+            →
+            Step Functions / EventBridge
+            →
+            Approved AWS Services and Data Sources
+            →
+            CloudWatch / CloudTrail / Security Services
+
+        </div>
+
+        <p>
+            Each stage introduces appropriate controls so that AI workflows can
+            be monitored, authorized and audited as they interact with
+            enterprise resources.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Multi-Account Governance</h2>
+
+        <p>
+            A multi-account AWS structure was used to establish clear
+            separation between environments and governance responsibilities.
+        </p>
+
+        <h3>Development Account</h3>
+
+        <p>
+            Used for development and testing of AI-enabled applications and
+            workflows without directly exposing production resources.
+        </p>
+
+        <h3>Production Account</h3>
+
+        <p>
+            Hosts production AI workloads and business workflows under stricter
+            identity, security and operational controls.
+        </p>
+
+        <h3>Shared Services Account</h3>
+
+        <p>
+            Provides shared infrastructure and services required across the
+            environment while reducing duplication between workload accounts.
+        </p>
+
+        <h3>Centralized Logging Account</h3>
+
+        <p>
+            Provides a dedicated location for centralized logging and audit
+            information, supporting stronger separation of operational data
+            from workload environments.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>AI & Agentic Workflow Controls</h2>
+
+        <h3>Controlled Model Access</h3>
+
+        <p>
+            Amazon Bedrock provides the managed foundation-model access layer,
+            while IAM controls determine which applications and workloads can
+            interact with AI capabilities.
+        </p>
+
+        <h3>Workflow Orchestration</h3>
+
+        <p>
+            AWS Step Functions provides controlled orchestration of multi-step
+            workflows, allowing individual actions to be explicitly defined
+            rather than allowing unrestricted execution.
+        </p>
+
+        <h3>Event-Driven Execution</h3>
+
+        <p>
+            Amazon EventBridge enables controlled event-driven invocation of
+            workflows and services, providing a structured mechanism for
+            connecting business events to AI-enabled processes.
+        </p>
+
+        <h3>Least-Privilege Access</h3>
+
+        <p>
+            IAM roles are used to restrict access to only the AWS resources and
+            actions required by each workload or workflow component.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Security & Data Protection</h2>
+
+        <h3>Identity & Access Management</h3>
+
+        <p>
+            IAM policies and roles establish controlled access between users,
+            applications and AWS services, reducing unnecessary permissions and
+            limiting the potential impact of compromised credentials or
+            workloads.
+        </p>
+
+        <h3>Data Protection</h3>
+
+        <p>
+            Amazon S3 provides controlled storage for application and
+            governance-related data, with AWS KMS used to support encryption
+            and key management requirements.
+        </p>
+
+        <h3>Security Detection</h3>
+
+        <p>
+            Amazon GuardDuty provides threat detection capabilities while AWS
+            Security Hub provides centralized visibility into security
+            findings and security posture.
+        </p>
+
+        <h3>Auditability</h3>
+
+        <p>
+            AWS CloudTrail records API activity across the environment,
+            providing an audit trail for actions performed against AWS
+            resources and supporting investigation and accountability.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Monitoring & Operational Visibility</h2>
+
+        <p>
+            Monitoring was treated as a core component of the architecture
+            rather than an afterthought.
+        </p>
+
+        <ul>
+            <li>
+                CloudTrail provides visibility into AWS API activity and
+                administrative actions.
+            </li>
+
+            <li>
+                CloudWatch provides operational monitoring, logging and
+                visibility into workload behavior.
+            </li>
+
+            <li>
+                EventBridge provides visibility and automation opportunities
+                around relevant events.
+            </li>
+
+            <li>
+                Security Hub provides centralized visibility into security
+                findings.
+            </li>
+
+            <li>
+                GuardDuty provides threat detection across supported AWS
+                resources.
+            </li>
+        </ul>
+
+        <p>
+            Together, these controls create a foundation for detecting,
+            investigating and responding to unexpected activity across
+            AI-enabled workloads.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Technical Challenges & Solutions</h2>
+
+        <h3>Balancing AI Innovation With Security</h3>
+
+        <p>
+            A major architectural consideration was avoiding an approach where
+            security controls prevent useful AI adoption.
+        </p>
+
+        <p>
+            The solution was to establish governance boundaries around AI
+            workloads while still allowing development teams to experiment
+            within controlled environments.
+        </p>
+
+
+        <h3>Controlling Agentic Workflows</h3>
+
+        <p>
+            Agentic workflows can potentially interact with multiple systems
+            and services. Allowing unrestricted access would increase the
+            potential impact of an incorrect or compromised workflow.
+        </p>
+
+        <p>
+            The architecture therefore uses IAM permissions, explicit workflow
+            orchestration and controlled service interactions to limit what
+            individual components can access or execute.
+        </p>
+
+
+        <h3>Maintaining Auditability</h3>
+
+        <p>
+            AI-driven actions can introduce additional challenges when
+            investigating how a particular outcome was produced.
+        </p>
+
+        <p>
+            Centralized logging, CloudTrail activity records and operational
+            monitoring provide the foundation for tracing infrastructure and
+            service activity associated with AI-enabled workflows.
+        </p>
+
+
+        <h3>Environment Separation</h3>
+
+        <p>
+            AI experimentation in development should not automatically expose
+            production resources or data.
+        </p>
+
+        <p>
+            Separating development, production, shared services and centralized
+            logging into dedicated AWS accounts establishes stronger isolation
+            and clearer governance boundaries.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Governance Model</h2>
+
+        <p>
+            The architecture establishes governance across four key areas:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Identity:</strong> Who can access AI capabilities and
+                AWS resources.
+            </li>
+
+            <li>
+                <strong>Data:</strong> What information AI workloads can access
+                and how it is protected.
+            </li>
+
+            <li>
+                <strong>Execution:</strong> What actions AI and agentic
+                workflows are permitted to perform.
+            </li>
+
+            <li>
+                <strong>Audit:</strong> How activity is monitored, recorded and
+                investigated.
+            </li>
+        </ul>
+
+        <p>
+            This creates a governance foundation that can evolve as AI use
+            cases expand without requiring the organization to redesign its
+            entire cloud environment.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Outcome</h2>
+
+        <p>
+            The resulting architecture provided a practical framework for
+            introducing AI and agentic workflows into an enterprise AWS
+            environment while maintaining security, governance and operational
+            visibility.
+        </p>
+
+        <ul>
+            <li>
+                Established separation between development, production, shared
+                services and centralized logging environments.
+            </li>
+
+            <li>
+                Introduced controlled access to AI capabilities through IAM and
+                managed AWS services.
+            </li>
+
+            <li>
+                Established controlled orchestration for multi-step AI and
+                agentic workflows.
+            </li>
+
+            <li>
+                Incorporated encryption and data protection using S3 and KMS.
+            </li>
+
+            <li>
+                Established centralized monitoring and audit visibility using
+                CloudTrail and CloudWatch.
+            </li>
+
+            <li>
+                Incorporated GuardDuty and Security Hub into the security
+                architecture.
+            </li>
+
+            <li>
+                Created a governance foundation that can support expansion of
+                AI use cases without sacrificing enterprise security controls.
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Key AWS Services</h2>
+
+        <ul>
+            <li>Amazon Bedrock</li>
+            <li>AWS IAM</li>
+            <li>AWS Step Functions</li>
+            <li>Amazon EventBridge</li>
+            <li>AWS CloudTrail</li>
+            <li>Amazon CloudWatch</li>
+            <li>Amazon S3</li>
+            <li>AWS KMS</li>
+            <li>Amazon GuardDuty</li>
+            <li>AWS Security Hub</li>
+            <li>Amazon EC2</li>
+            <li>AWS Organizations</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>What This Project Demonstrates</h2>
+
+        <ul>
+            <li>AI governance architecture</li>
+            <li>Agentic workflow security</li>
+            <li>AWS multi-account architecture</li>
+            <li>Identity and least-privilege access</li>
+            <li>Cloud security architecture</li>
+            <li>Data protection and encryption</li>
+            <li>Centralized logging and auditability</li>
+            <li>Event-driven architecture</li>
+            <li>Workflow orchestration</li>
+            <li>Enterprise cloud governance</li>
+            <li>Architecture and security decision-making</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Back to Portfolio</h2>
+
+        <p>
+            <a href="../../index.html">← Back to Portfolio</a>
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>
